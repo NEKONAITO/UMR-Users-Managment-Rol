@@ -1,0 +1,37 @@
+{% extends 'App/main.html' %}
+<!-- ################################ -->
+{% block content %}
+<!-- ################################ -->
+<br>
+<h2 class="text-center">SIGN UP</h2>
+<hr>
+<form class="text-right" method="POST">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-auto">
+                {% csrf_token %}
+                <hr>
+                {{form.username.label}}
+                {{form.username}}
+                <hr>
+                <!--{{form.email.label}}-->
+                <!--{{form.email}}-->
+                <hr>
+                {{form.password1.label}}
+                {{form.password1}}
+                <hr>
+                {{form.password2.label}}
+                {{form.password2}}
+                <hr>
+                <button type="submit" class="btn btn-primary">SIGN UP</button>
+                <hr>
+                {% for i in messages %}
+                <p id="messages">{{i}}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</form>
+<hr>
+<!-- ################################ -->
+{% endblock %}

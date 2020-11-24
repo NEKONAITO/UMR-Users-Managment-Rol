@@ -1,0 +1,27 @@
+{% extends 'App/main.html' %}
+<!-- ################################ -->
+{% block content %}
+<!-- ################################ -->
+<br>
+<h2 class="text-center">PERFIL DE <b>{{request.user.username}}</b></h2>
+<hr>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+            {% if user.is_authenticated %}
+                {% if perms.foo %}
+            <p>
+                {% for i in datos %}
+                {{i.name}}
+                {{i.lastname}}
+                <hr>
+                {% endfor %}
+            </p>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+<hr>
+<!-- ################################ -->
+{% endblock %}
